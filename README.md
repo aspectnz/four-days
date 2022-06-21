@@ -1,3 +1,7 @@
+# Introduction
+
+Four days is an action adventure game. Currently under development, the game will consist of a single player character named Silas. As Silas, your goal is to... coming soon.
+
 # Resources
 
 ### Tools & Utilities

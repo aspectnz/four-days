@@ -150,6 +150,12 @@ public class PlayerMovement1 : MonoBehaviour
     // Calculate movement direction
     moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
+    // On Slope
+    if (OnSlope())
+    {
+      rb.AddForce(GetSlopeMoveDirection(), *moveSpeed, 20f, ForceMode.Force);
+    }
+
     // On ground
     if (grounded)
       rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);

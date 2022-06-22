@@ -6,10 +6,12 @@ public class PlayerMovement1 : MonoBehaviour
 {
 
   [Header("Movement")]
-  public float moveSpeed;
-
+  float moveSpeed;
+  public float walkSpeed;
+  public float sprintSpeed;
   public float groundDrag;
 
+  [Header("Jumping")]
   public float jumpForce;
   public float jumpCooldown;
   public float airMultiplier;
@@ -17,6 +19,7 @@ public class PlayerMovement1 : MonoBehaviour
 
   [Header("Keybinds")]
   public KeyCode jumpKey = KeyCode.Space;
+  public KeyCode sprintKey = KeyCode.LeftShift;
 
 
   [Header("Ground Check")]
@@ -33,6 +36,12 @@ public class PlayerMovement1 : MonoBehaviour
   Vector3 moveDirection;
 
   Rigidbody rb;
+
+  MovementState state;
+  public enum MovementState
+  {
+    walking, sprinting, air
+  }
 
   // Start is called before the first frame update
   void Start()
@@ -51,6 +60,7 @@ public class PlayerMovement1 : MonoBehaviour
 
     MyInput();
     SpeedControl();
+    StateHandler();
 
     // Handle drag
     if (grounded)
@@ -76,6 +86,29 @@ public class PlayerMovement1 : MonoBehaviour
       Jump();
 
       Invoke(nameof(ResetJump), jumpCooldown);
+    }
+  }
+
+  void StateHandler()
+  {
+    // Mode - Sprinting
+    if (grounded && Input.GetKey(sprintKey))
+    {
+      state = MovementState.sprinting;
+      moveSpeed = sprintSpeed;
+    }
+
+    // Mode - Walking
+    else if (grounded)
+    {
+      state = MovementState.walking;
+      moveSpeed = walkSpeed;
+    }
+
+    // Mode - air
+    else
+    {
+      state = MovementState.air;
     }
   }
 

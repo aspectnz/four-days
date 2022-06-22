@@ -48,6 +48,4 @@ public class PlayerMovement1 : MonoBehaviour
     moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
     rb.AddForce(moveDirection.normalized * movespeed * 10f, ForceMode.Force);
   }
-
-
 }

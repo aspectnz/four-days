@@ -17,9 +17,15 @@ public class PlayerMovement1 : MonoBehaviour
   public float airMultiplier;
   bool readyToJump;
 
+  [Header("Crouching")]
+  public float crouchSpeed;
+  public float crouchYScale;
+  private float StartYScale;
+
   [Header("Keybinds")]
   public KeyCode jumpKey = KeyCode.Space;
-  public KeyCode sprintKey = KeyCode.LeftShift;
+  public KeyCode sprintKey = KeyCode.C;
+  public KeyCode crouchKey = KeyCode.LeftShift;
 
 
   [Header("Ground Check")]
@@ -50,6 +56,8 @@ public class PlayerMovement1 : MonoBehaviour
     rb.freezeRotation = true;
 
     ResetJump();
+
+    StartYScale = transform.localScale.y;
   }
 
   // Update is called once per frame
@@ -86,6 +94,12 @@ public class PlayerMovement1 : MonoBehaviour
       Jump();
 
       Invoke(nameof(ResetJump), jumpCooldown);
+    }
+
+    // Start crouch
+    if (Input.GetKeyDOwn(crouchKey))
+    {
+      transform.localScale = new Vector3(transform.localeScale.x, crouchYScale, transform.localScale.z);
     }
   }
 

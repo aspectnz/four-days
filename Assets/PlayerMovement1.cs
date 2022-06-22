@@ -16,7 +16,7 @@ public class PlayerMovement1 : MonoBehaviour
   bool readyToJump;
 
   [Header("Keybinds")]
-  public KeyCode jumpKey = KeyCode.space;
+  public KeyCode jumpKey = KeyCode.Space;
 
 
   [Header("Ground Check")]
@@ -24,8 +24,6 @@ public class PlayerMovement1 : MonoBehaviour
   public float groundDistance = 0.4f;
   public LayerMask whatIsGround;
   bool grounded;
-
-
 
   public Transform orientation;
 
@@ -42,6 +40,7 @@ public class PlayerMovement1 : MonoBehaviour
     rb = GetComponent<Rigidbody>();
     rb.freezeRotation = true;
 
+    ResetJump();
   }
 
   // Update is called once per frame
@@ -70,7 +69,7 @@ public class PlayerMovement1 : MonoBehaviour
     verticalInput = Input.GetAxisRaw("Vertical");
 
     // When to jump
-    if (MyInput.GetKey(jumpKey) && readyToJump && grounded)
+    if (Input.GetKey(jumpKey) && readyToJump && grounded)
     {
       readyToJump = false;
 

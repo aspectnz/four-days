@@ -97,9 +97,9 @@ public class PlayerMovement1 : MonoBehaviour
     }
 
     // Start crouch
-    if (Input.GetKeyDOwn(crouchKey))
+    if (Input.GetKeyDown(crouchKey))
     {
-      transform.localScale = new Vector3(transform.localeScale.x, crouchYScale, transform.localScale.z);
+      transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
       rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
     }
 
@@ -107,7 +107,7 @@ public class PlayerMovement1 : MonoBehaviour
     if (Input.GetKeyUp(crouchKey))
     {
 
-      transform.localScale = new Vector3(transform.localeScale.x, startYScale, transform.localScale.z);
+      transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
     }
   }
 

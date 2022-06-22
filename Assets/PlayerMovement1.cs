@@ -43,10 +43,10 @@ public class PlayerMovement1 : MonoBehaviour
 
   Rigidbody rb;
 
-  MovementState state;
+  public MovementState state;
   public enum MovementState
   {
-    walking, sprinting, air
+    walking, sprinting, crouching, air
   }
 
   // Start is called before the first frame update
@@ -113,6 +113,13 @@ public class PlayerMovement1 : MonoBehaviour
 
   void StateHandler()
   {
+    // Mode - Crouching
+    if (Input.GetKey(crouchKey))
+    {
+      state = MovementState.crouching;
+      moveSpeed = crouchSpeed;
+    }
+
     // Mode - Sprinting
     if (grounded && Input.GetKey(sprintKey))
     {

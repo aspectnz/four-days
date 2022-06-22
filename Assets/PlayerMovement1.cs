@@ -20,7 +20,7 @@ public class PlayerMovement1 : MonoBehaviour
   [Header("Crouching")]
   public float crouchSpeed;
   public float crouchYScale;
-  private float StartYScale;
+  private float startYScale;
 
   [Header("Keybinds")]
   public KeyCode jumpKey = KeyCode.Space;
@@ -57,7 +57,7 @@ public class PlayerMovement1 : MonoBehaviour
 
     ResetJump();
 
-    StartYScale = transform.localScale.y;
+    startYScale = transform.localScale.y;
   }
 
   // Update is called once per frame
@@ -100,6 +100,14 @@ public class PlayerMovement1 : MonoBehaviour
     if (Input.GetKeyDOwn(crouchKey))
     {
       transform.localScale = new Vector3(transform.localeScale.x, crouchYScale, transform.localScale.z);
+      rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+    }
+
+    // Stop crouch
+    if (Input.GetKeyUp(crouchKey))
+    {
+
+      transform.localScale = new Vector3(transform.localeScale.x, startYScale, transform.localScale.z);
     }
   }
 

@@ -29,6 +29,7 @@ public class PlayerMovement1 : MonoBehaviour
 
 
   [Header("Ground Check")]
+  public float playerHeight;
   public Transform groundCheck;
   public float groundDistance = 0.4f;
   public LayerMask whatIsGround;
@@ -153,7 +154,7 @@ public class PlayerMovement1 : MonoBehaviour
     // On Slope
     if (OnSlope())
     {
-      rb.AddForce(GetSlopeMoveDirection(), *moveSpeed, 20f, ForceMode.Force);
+      rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 20f, ForceMode.Force);
     }
 
     // On ground
@@ -163,6 +164,9 @@ public class PlayerMovement1 : MonoBehaviour
     // In air
     else if (!grounded)
       rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+
+    //   Turn gravity off while on slope
+    rb.useGravity = !OnSlope();
   }
 
   void SpeedControl()
@@ -181,9 +185,9 @@ public class PlayerMovement1 : MonoBehaviour
   void Jump()
   {
     // Reset y velocity
-    rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+    rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
 
-    rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+    // rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
   }
 
   void ResetJump()

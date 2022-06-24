@@ -158,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // On ground
-    if (grounded)
+    else if (grounded)
       rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
     // In air
@@ -166,7 +166,7 @@ public class PlayerMovement : MonoBehaviour
       rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
 
     //   Turn gravity off while on slope
-    rb.useGravity = !OnSlope();
+    // rb.useGravity = !OnSlope();
   }
 
   void SpeedControl()

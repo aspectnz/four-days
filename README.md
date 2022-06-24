@@ -41,6 +41,9 @@ Charing up allows you to super jump and use special abilities.
 [Textures.com](https://www.textures.com/)  
 [Kenney.nl](https://www.kenney.nl/)  
 [DevAssets.com](https://devassets.com/)
+https://www.humus.name/index.php?page=Textures
+https://polyhaven.com/license
+https://www.mixamo.com/#/
 
 ### Sound Assets
 

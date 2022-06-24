@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Mode - Sprinting
-    if (grounded && Input.GetKey(sprintKey))
+    else if (grounded && Input.GetKey(sprintKey))
     {
       state = MovementState.sprinting;
       moveSpeed = sprintSpeed;
@@ -154,18 +154,19 @@ public class PlayerMovement : MonoBehaviour
     // On Slope
     if (OnSlope())
     {
+      Debug.Log("On Slope!");
       rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 20f, ForceMode.Force);
     }
 
     // On ground
-    else if (grounded)
+    if (grounded)
       rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
     // In air
     else if (!grounded)
       rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
 
-    //   Turn gravity off while on slope
+    // Turn gravity off while on slope
     // rb.useGravity = !OnSlope();
   }
 

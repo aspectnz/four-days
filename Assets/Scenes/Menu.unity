@@ -1746,7 +1746,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1480156759}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CursorScript, Assembly-CSharp
         m_MethodName: OnMouseEnter
         m_Mode: 1
@@ -1758,7 +1758,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1480156759}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CursorScript, Assembly-CSharp
         m_MethodName: OnMouseExit
         m_Mode: 1
@@ -1857,7 +1857,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1480156757}
   - component: {fileID: 1480156758}
-  - component: {fileID: 1480156759}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1899,21 +1898,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed782083b4cf6634fab0c349c240bcd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1480156759
+--- !u!1 &1549740186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1549740188}
+  - component: {fileID: 1549740187}
+  m_Layer: 0
+  m_Name: CursorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1549740187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480156756}
+  m_GameObject: {fileID: 1549740186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073395034cdf8b44eadbe241d66ef41b, type: 3}
+  m_Script: {fileID: 11500000, guid: d7130aad298f1074db7f1f22cf4ac75c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cursorTexture: {fileID: 2800000, guid: 53337b60982411d49a710fcc705eae8c, type: 3}
-  cursorMode: 1
-  hotSpot: {x: 0, y: 0}
+--- !u!4 &1549740188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549740186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 592.3979, y: 298.31158, z: -164.71579}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1624661454
 GameObject:
   m_ObjectHideFlags: 0

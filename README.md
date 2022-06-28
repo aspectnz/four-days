@@ -28,28 +28,28 @@ Charing up allows you to super jump and use special abilities.
 
 # Resources
 
-[Four Days Website](https://fourdays.aspect.cx)
+[Four Days Website](https://fourdays.aspect.cx)  
 
 ### Tools & Utilities
 
 [Firebase with Unity](https://firebase.google.com/docs/games/setup)  
-[Plask](https://plask.ai/)
+[Plask](https://plask.ai/)  
 
 ### Visual Assets
 
 [Unity Asset Store](https://assetstore.unity.com/)  
 [Textures.com](https://www.textures.com/)  
 [Kenney.nl](https://www.kenney.nl/)  
-[DevAssets.com](https://devassets.com/)
-https://www.humus.name/index.php?page=Textures
-https://polyhaven.com/license
-https://www.mixamo.com/#/
+[DevAssets.com](https://devassets.com/)  
+https://www.humus.name/index.php?page=Textures  
+https://polyhaven.com/license  
+https://www.mixamo.com/#/  
 
 ### Sound Assets
 
-[Freesound](https://freesound.org/)
+[Freesound](https://freesound.org/)  
 
 ### Additional
 
 [6 Game Development Stages](https://kevurugames.com/blog/6-key-stages-of-game-development-from-concept-to-standing-ovation/)  
-[Unity Learn](https://learn.unity.com/course/create-with-code)
+[Unity Learn](https://learn.unity.com/course/create-with-code)  

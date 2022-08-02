@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
   [Header("Keybinds")]
   public KeyCode jumpKey = KeyCode.Space;
   public KeyCode sprintKey = KeyCode.C;
+  public KeyCode superKey = KeyCode.LeftControl;
   public KeyCode crouchKey = KeyCode.LeftShift;
 
 
@@ -51,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
   public MovementState state;
   public enum MovementState
   {
-    walking, sprinting, crouching, air
+    walking, sprinting, superSprinting, crouching, air
   }
 
   // Start is called before the first frame update
@@ -125,12 +126,25 @@ public class PlayerMovement : MonoBehaviour
       moveSpeed = crouchSpeed;
     }
 
+
+    // Mode - Super Sprinting
+    else if (grounded && Input.GetKey(sprintKey)&& Input.GetKey(superKey))
+    {
+   
+
+      state = MovementState.superSprinting;
+      moveSpeed = sprintSpeed * 20;
+      
+    }
+
     // Mode - Sprinting
     else if (grounded && Input.GetKey(sprintKey))
     {
       state = MovementState.sprinting;
       moveSpeed = sprintSpeed;
     }
+
+    
 
     // Mode - Walking
     else if (grounded)
